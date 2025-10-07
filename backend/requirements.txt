@@ -1,2 +1,8 @@
 fastapi
 uvicorn[standard]
+openai>=1.35.0
+requests>=2.31.0
+beautifulsoup4>=4.12.2
+youtube-transcript-api>=0.6.2
+python-dotenv>=1.0.1
+openai-agents>=0.0.10
