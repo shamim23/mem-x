@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "URL Logger (Minimal)",
+  "version": "0.1.0",
+  "description": "Captures visited URLs and posts to local FastAPI backend.",
+  "permissions": [
+    "webNavigation",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "URL Logger"
+  }
+}
+
