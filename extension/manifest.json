@@ -1,20 +1,27 @@
 {
   "manifest_version": 3,
   "name": "URL Logger (Minimal)",
-  "version": "0.1.0",
-  "description": "Captures visited URLs and posts to local FastAPI backend.",
+  "version": "0.1.2",
+  "description": "Manually sends current page URL to local FastAPI backend.",
   "permissions": [
-    "webNavigation",
+    "activeTab",
     "storage"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "http://localhost:8000/*"
   ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
   "background": {
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "URL Logger"
+    "default_title": "Save Current URL"
   }
 }
-
